@@ -7,14 +7,17 @@
                 <div class="item"></div>
                 <div class="item">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores culpa doloribus eum eveniet exercitationem illum impedit praesentium quasi quo sunt. At cupiditate ducimus excepturi iure numquam qui quos tempora totam.
+                        Vidchay - музичний гурт який утворився в 2021 році в маленькому містечку Ромни що на Сумщині. Гурт грає в жанрі гранж-інді рок. Цей колектив має вже багато прихильників в своєму місті й вони готові цьому не зупинітися. Продовжують писати пісні та давати концерти в різних містах України.
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="item">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate error eum fuga impedit ipsam itaque iure molestias quo veniam, voluptatem. Aliquid cupiditate eos expedita inventore laboriosam neque quas sit temporibus!
+                        Склад: <br>
+                        Строй Олександр (вокал і гітара) <br>
+                        Ксенія Музика (барабани) <br>
+                        Дмитро Півторак (бас-гітара) <br>
                     </p>
                 </div>
                 <div class="item"></div>
@@ -34,7 +37,7 @@ export default {
 <style scoped>
     .main-image {
         height: 30em;
-        background-image: url("../../static/main-image.png");
+        background-image: url("../../static/main-image.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

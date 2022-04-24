@@ -17,3 +17,5 @@ public/js
 public/css
 docker
 docker-compose.yml
+ssh
+ssh.pub
