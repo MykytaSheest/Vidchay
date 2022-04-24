@@ -1,6 +1,8 @@
 import {createRouter, createWebHistory} from "vue-router";
 import Welcome from "./views/Welcome";
 import About from "./views/About";
+import Concert from "./views/Concert";
+import Merch from "./views/Merch";
 
 const routes = [
     {
@@ -12,6 +14,16 @@ const routes = [
         path: '/about',
         name: 'about',
         component: About
+    },
+    {
+        path: '/concert',
+        name: 'concert',
+        component: Concert
+    },
+    {
+        path: '/merch',
+        name: 'merch',
+        component: Merch
     }
 ]
 
