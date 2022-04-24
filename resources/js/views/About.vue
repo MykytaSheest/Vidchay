@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>About</h1>
+        <h1>Контакты</h1>
     </div>
 </template>
 
@@ -9,6 +9,7 @@ export default {
     name: "About"
 }
 </script>
+
 
 <style scoped>
 
