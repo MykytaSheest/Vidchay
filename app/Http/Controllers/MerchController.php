@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MerchRequest;
 use App\Models\Merch;
+use App\Service\MerchService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MerchController extends Controller
 {
+
+    protected $merchService;
+
+    public function __construct()
+    {
+        $this->merchService = new MerchService();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,11 +42,11 @@ class MerchController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(MerchRequest $request)
     {
-        //
+        return $this->merchService->createNewMerch($request);
     }
 
     /**
