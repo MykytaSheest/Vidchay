@@ -60,7 +60,7 @@
                         </tbody>
                     </table>
                 </div>
-                <a href="#" class="btn btn-primary">Додати товар</a>
+                <a href="{{route('merch.create')}}" class="btn btn-primary">Додати товар</a>
             </div>
             <div class="card-footer text-muted">
                 2 days ago

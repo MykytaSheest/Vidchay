@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 
+Route::middleware('auth')->group(function() {
+    Route::prefix('admin')->group(function() {
+        Route::prefix('merch')->group(function() {
+            Route::get('/create', [App\Http\Controllers\MerchController::class, 'create'])->name('merch.create');
+        });
+    });
+});
+
+
 Auth::routes(['register' => true]);
 
 Route::get('/{vue_capture?}', function () {
