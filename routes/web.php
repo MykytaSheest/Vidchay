@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+
+Auth::routes(['register' => true]);
+
+Route::get('/{vue_capture?}', function () {
     return view('index');
-})->where('any', '.*');;
+})->where('vue_capture', '[\/\w\.-]*');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
