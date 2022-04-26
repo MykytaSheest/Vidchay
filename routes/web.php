@@ -20,6 +20,9 @@ Route::middleware('auth')->group(function() {
         Route::prefix('merch')->group(function() {
             Route::get('/create', [App\Http\Controllers\MerchController::class, 'create'])->name('merch.create');
             Route::post('/store', [App\Http\Controllers\MerchController::class, 'store'])->name('merch.store');
+            Route::get('/destroy/{id}', [App\Http\Controllers\MerchController::class, 'destroy'])->name('merch.destroy');
+            Route::get('/edit/{id}', [App\Http\Controllers\MerchController::class, 'edit'])->name('merch.edit');
+            Route::post('/update/{id}', [App\Http\Controllers\MerchController::class, 'update'])->name('merch.update');
         });
     });
 });

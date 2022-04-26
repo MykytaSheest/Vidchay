@@ -25,7 +25,7 @@
                             <tbody>
                             @foreach($merches as $merch)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">{{$merch["id"]}}</th>
                                     <td>{{$merch["name"]}}</td>
                                     <td>{{$merch["description"]}}</td>
                                     <td>
@@ -50,8 +50,8 @@
                                     </td>
                                     <td>{{$merch["amount"]}}</td>
                                     <td>
-                                        <button class="btn btn-outline-secondary" disabled>Редагувати</button>
-                                        <button class="btn btn-outline-danger" disabled>Видалити</button>
+                                        <a href="{{route('merch.edit', $merch["id"])}}" class="btn btn-outline-secondary">Редагувати</a>
+                                        <a href="{{route('merch.destroy', $merch["id"])}}" class="btn btn-outline-danger">Видалити</a>
                                     </td>
                                 </tr>
                             @endforeach
