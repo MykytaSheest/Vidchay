@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
+            $table->id();
             $table->string('owner_band')->default('Євген Гречка');
             $table->string('phone')->default('+380980988730');
             $table->string('email')->default('vidchayevgen@gmail.com');

@@ -24,7 +24,11 @@ Route::middleware('auth')->group(function() {
             Route::get('/edit/{id}', [App\Http\Controllers\MerchController::class, 'edit'])->name('merch.edit');
             Route::post('/update/{id}', [App\Http\Controllers\MerchController::class, 'update'])->name('merch.update');
         });
+        Route::prefix('contact')->group(function () {
+            Route::post('/store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+        });
     });
+
 });
 
 

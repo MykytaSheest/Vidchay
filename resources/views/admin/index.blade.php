@@ -72,19 +72,41 @@
                     Контакти
                 </div>
                     <div class="card-body">
-                        <form action="#">
+                        <form action="{{route('contact.store')}}" method="POST">
+                            @csrf
                             <form>
                                 <div class="form-group">
                                     <label>Директор гурту</label>
-                                    <input type="email" class="form-control"  placeholder="Директор гурту">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Директор гурту"
+                                        name="owner_band"
+                                        value="{{$contacts->owner_band}}"
+                                        required
+                                    >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Телефон</label>
-                                    <input type="text" class="form-control" placeholder="Телефон">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Телефон"
+                                        name="phone"
+                                        value="{{$contacts->phone}}"
+                                        required
+                                    >
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control"  placeholder="Email">
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                        name="email"
+                                        value="{{$contacts->email}}"
+                                        required
+                                    >
                                 </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Зберегти</button>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Merch;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index',  ["merches" => Merch::all()]);
+        return view('admin.index',  ["merches" => Merch::all(), "contacts" => Contact::first()]);
     }
 }
