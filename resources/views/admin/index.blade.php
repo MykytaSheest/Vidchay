@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <div class="card text-center">
+        <div class="card text-center" style="margin-bottom: 15px">
             <div class="card-header">
                 Товари
             </div>
@@ -67,5 +67,53 @@
                 VIDCHAY
             </div>
         </div>
+            <div class="card text-center" style="margin-bottom: 15px">
+                <div class="card-header">
+                    Контакти
+                </div>
+                    <div class="card-body">
+                        <form action="{{route('contact.store')}}" method="POST">
+                            @csrf
+                            <form>
+                                <div class="form-group">
+                                    <label>Директор гурту</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Директор гурту"
+                                        name="owner_band"
+                                        value="{{$contacts->owner_band}}"
+                                        required
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Телефон</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Телефон"
+                                        name="phone"
+                                        value="{{$contacts->phone}}"
+                                        required
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                        name="email"
+                                        value="{{$contacts->email}}"
+                                        required
+                                    >
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Зберегти</button>
+                            </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
     </div>
 @endsection
