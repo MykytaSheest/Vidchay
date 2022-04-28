@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <div class="card text-center">
+        <div class="card text-center" style="margin-bottom: 15px">
             <div class="card-header">
                 Товари
             </div>
@@ -67,5 +67,31 @@
                 VIDCHAY
             </div>
         </div>
+            <div class="card text-center" style="margin-bottom: 15px">
+                <div class="card-header">
+                    Контакти
+                </div>
+                    <div class="card-body">
+                        <form action="#">
+                            <form>
+                                <div class="form-group">
+                                    <label>Директор гурту</label>
+                                    <input type="email" class="form-control"  placeholder="Директор гурту">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Телефон</label>
+                                    <input type="text" class="form-control" placeholder="Телефон">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control"  placeholder="Email">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Зберегти</button>
+                            </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
     </div>
 @endsection
