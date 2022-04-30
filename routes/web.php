@@ -13,19 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [\App\Http\Controllers\WebControllers\AdminController::class, 'index'])->name('admin');
 
 Route::middleware('auth')->group(function() {
     Route::prefix('admin')->group(function() {
         Route::prefix('merch')->group(function() {
-            Route::get('/create', [App\Http\Controllers\MerchController::class, 'create'])->name('merch.create');
-            Route::post('/store', [App\Http\Controllers\MerchController::class, 'store'])->name('merch.store');
-            Route::get('/destroy/{id}', [App\Http\Controllers\MerchController::class, 'destroy'])->name('merch.destroy');
-            Route::get('/edit/{id}', [App\Http\Controllers\MerchController::class, 'edit'])->name('merch.edit');
-            Route::post('/update/{id}', [App\Http\Controllers\MerchController::class, 'update'])->name('merch.update');
+            Route::get('/create', [\App\Http\Controllers\WebControllers\MerchController::class, 'create'])->name('merch.create');
+            Route::post('/store', [\App\Http\Controllers\WebControllers\MerchController::class, 'store'])->name('merch.store');
+            Route::get('/destroy/{id}', [\App\Http\Controllers\WebControllers\MerchController::class, 'destroy'])->name('merch.destroy');
+            Route::get('/edit/{id}', [\App\Http\Controllers\WebControllers\MerchController::class, 'edit'])->name('merch.edit');
+            Route::post('/update/{id}', [\App\Http\Controllers\WebControllers\MerchController::class, 'update'])->name('merch.update');
         });
         Route::prefix('contact')->group(function () {
-            Route::post('/store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+            Route::post('/store', [\App\Http\Controllers\WebControllers\ContactController::class, 'store'])->name('contact.store');
         });
     });
 
