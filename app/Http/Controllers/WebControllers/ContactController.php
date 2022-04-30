@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WebControllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
-use Illuminate\Http\Request;
+
+use function redirect;
 
 class ContactController extends Controller
 {

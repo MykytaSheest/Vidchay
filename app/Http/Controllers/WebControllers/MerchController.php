@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WebControllers;
 
 use App\Http\Requests\MerchRequest;
 use App\Http\Requests\MerchUpdateRequest;
 use App\Models\Merch;
 use App\Service\MerchService;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+
+use function view;
 
 class MerchController extends Controller
 {

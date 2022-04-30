@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WebControllers;
 
 use App\Models\Contact;
 use App\Models\Merch;
-use Illuminate\Http\Request;
+
+use function view;
 
 class AdminController extends Controller
 {
