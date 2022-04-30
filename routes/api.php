@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('merch')->group(function () {
+    Route::get('get/all', [App\Http\Controllers\ApiControllers\MerchController::class, 'getItems'])->name('api:merch:items');
+    Route::get('get/{id}', [App\Http\Controllers\ApiControllers\MerchController::class, 'getItem'])->name('api:merch:item');
+});
+
