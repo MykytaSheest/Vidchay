@@ -1,6 +1,11 @@
 <template>
     <div>
         <div class="void"></div>
+        <div class="alert d-flex justify-content-center" @click="hiddenAlert" v-if="this.$route.query.success === 'yes'">
+            <div class="alert alert-success w-50 d-flex justify-content-center" role="alert">
+                Дякую за замовлення!
+            </div>
+        </div>
 
         <div class="cards">
             <div v-for="merchItem in merchItems">
@@ -29,6 +34,13 @@ export default {
         axios.get('/api/merch/get/all').then((response)=>{
             this.merchItems = response.data.data
         })
+    },
+    methods: {
+        hiddenAlert() {
+            document.querySelector(".alert").style.visibility = "hidden";
+            document.querySelector(".alert").style.height = 0;
+            document.querySelector(".alert").style.width = 0;
+        }
     }
 }
 </script>

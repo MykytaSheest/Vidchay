@@ -18,8 +18,8 @@ class Merch extends Model
         "amount"
     ];
 
-    public function clients()
+    public function orders()
     {
-        return $this->belongsToMany(Client::class)->withPivot('count-item', 'post-index', 'address');
+        return $this->belongsToMany(Order::class)->withPivot('count-item', 'post-index', 'address');
     }
 }

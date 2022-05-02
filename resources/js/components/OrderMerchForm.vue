@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form action="">
+        <form>
             <input class="form-control form-control-sm" v-model="order.email" name="email" type="email" placeholder="Ваш email" required>
             <input class="form-control form-control-sm" v-model="order.firstname" name="firstname" type="text" placeholder="Ім'я" required>
             <input class="form-control form-control-sm" v-model="order.lastname" name="lastname" type="text" placeholder="Прізвище" required>
@@ -8,8 +8,10 @@
             <input class="form-control form-control-sm" v-model="order.countItem" name="count-item" type="number" placeholder="Кількість товару" required>
             <input class="form-control form-control-sm" v-model="order.postIndex" name="post-index" type="number" placeholder="Почтовий індекс" required>
             <input class="form-control form-control-sm" v-model="order.address" name="address" type="text" placeholder="Адреса" required>
-            <button class="btn btn-outline-success btn-sm">Замовити</button>
+            <input class="form-control form-control-sm" v-model="order.merch_id" name="merch_id" type="hidden" required>
         </form>
+        <button type="button" class="btn btn-outline-success btn-sm" @click="sendForm">Замовити</button>
+
     </div>
 </template>
 
@@ -24,8 +26,19 @@ export default {
                 lastname: null,
                 countItem: null,
                 postIndex: null,
-                address: null
+                address: null,
+                merch_id: this.$route.params.id
             }
+        }
+    },
+    methods: {
+        sendForm() {
+            axios.post('/api/order/set', this.order).then((response) => {
+                if (response.status === 201) {
+                    this.$router.push({name: 'merch', query: { success: 'yes' }})
+                }
+
+            })
         }
     }
 }

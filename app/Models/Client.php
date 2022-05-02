@@ -9,7 +9,13 @@ class Client extends Model
 {
     use HasFactory;
 
-    public function merches()
+    protected $fillable = [
+        'email',
+        'firstname',
+        'lastname',
+    ];
+
+    public function orders()
     {
         return $this->belongsToMany(Merch::class)->withPivot('count-item', 'post-index', 'address');
     }
