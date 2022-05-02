@@ -5,6 +5,8 @@ namespace App\Http\Controllers\WebControllers;
 use App\Models\Contact;
 use App\Models\Merch;
 
+use App\Models\Order;
+
 use function view;
 
 class AdminController extends Controller
@@ -26,6 +28,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index',  ["merches" => Merch::all(), "contacts" => Contact::first()]);
+        return view('admin.index',
+            [
+                "merches" => Merch::all(),
+                "contacts" => Contact::first(),
+                "orders" => Order::all()
+            ]);
     }
 }

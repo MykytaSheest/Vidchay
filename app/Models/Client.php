@@ -15,7 +15,7 @@ class Client extends Model
         'lastname',
     ];
 
-    public function orders()
+    public function merches()
     {
         return $this->belongsToMany(Merch::class)->withPivot('count-item', 'post-index', 'address');
     }

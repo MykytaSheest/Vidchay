@@ -16,4 +16,14 @@ class Order extends Model
         'post-index',
         'address',
     ];
+
+    public function merches()
+    {
+        return $this->hasMany(Merch::class, 'id', 'merch_id');
+    }
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class, 'id', 'client_id');
+    }
 }
