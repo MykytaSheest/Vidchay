@@ -1,6 +1,6 @@
 <template>
     <div>
-        <small id="userHelp" class="form-text text-center userHelp">Відтвердження замовлення буде вислано на почту адміністратором</small>
+        <small id="userHelp" class="form-text text-center userHelp">Підтвердження замовлення буде вислано на почту адміністратором</small>
         <div class="container d-flex justify-content-evenly">
             <div v-if="merchItem">
                 <Card :merchItem="merchItem"></Card>

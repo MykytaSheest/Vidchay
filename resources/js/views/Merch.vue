@@ -11,7 +11,11 @@
             <div v-for="merchItem in merchItems">
                 <Card :merchItem="merchItem"></Card>
             </div>
-
+            <div v-if="merchItems <= 0">
+                <div class="alert alert-secondary" role="alert">
+                    Нажаль товару немає :c
+                </div>
+            </div>
         </div>
         <div class="void"></div>
 
