@@ -3,6 +3,7 @@ import Welcome from "./views/Welcome";
 import About from "./views/About";
 import Concert from "./views/Concert";
 import Merch from "./views/Merch";
+import MerchItem from "./views/MerchItem";
 
 const routes = [
     {
@@ -24,7 +25,13 @@ const routes = [
         path: '/merch',
         name: 'merch',
         component: Merch
-    }
+    },
+    {
+        path: '/merch/:id',
+        name: 'merchItem',
+        component: MerchItem
+    },
+
 ]
 
 const router = createRouter({

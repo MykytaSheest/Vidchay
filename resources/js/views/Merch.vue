@@ -1,10 +1,12 @@
 <template>
     <div>
         <div class="void"></div>
+
         <div class="cards">
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+            <div v-for="merchItem in merchItems">
+                <Card :merchItem="merchItem"></Card>
+            </div>
+
         </div>
         <div class="void"></div>
 
@@ -15,8 +17,18 @@
 import Card from "../components/Card"
 export default {
     name: "Merch",
+    data() {
+        return {
+            merchItems: null
+        }
+    },
     components: {
         Card
+    },
+    mounted() {
+        axios.get('/api/merch/get/all').then((response)=>{
+            this.merchItems = response.data.data
+        })
     }
 }
 </script>
