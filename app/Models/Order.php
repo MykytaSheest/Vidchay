@@ -26,4 +26,11 @@ class Order extends Model
     {
         return $this->hasMany(Client::class, 'id', 'client_id');
     }
+
+    public function statuses()
+    {
+        return $this->belongsToMany(Status::class, 'order_status', 'status_id', 'id');
+    }
 }
+
+

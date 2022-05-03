@@ -7,6 +7,8 @@ use App\Models\Merch;
 
 use App\Models\Order;
 
+use App\Models\Status;
+
 use function view;
 
 class AdminController extends Controller
@@ -32,7 +34,8 @@ class AdminController extends Controller
             [
                 "merches" => Merch::all(),
                 "contacts" => Contact::first(),
-                "orders" => Order::all()
+                "orders" => Order::all(),
+                "statuses" => Status::all()
             ]);
     }
 }

@@ -136,7 +136,8 @@
                     </thead>
                     <tbody>
 
-                    @yield($countItem = 'count-item', $postIndex = 'post-index')
+                    @yield($countItem = 'count-item')
+                    @yield( $postIndex = 'post-index')
 
                         @foreach($orders as $order)
                             <tr>
@@ -150,20 +151,7 @@
                                 <td>{{$order->$postIndex}}</td>
                                 <td>{{$order->address}}</td>
                                 <td>
-                                    <div class="d-flex flex-column align-items-start">
-                                        <div>
-                                            <input type="radio" name="status" id="accepted" checked>
-                                            <label for="accepted">Прийнята</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" name="status" id="sent">
-                                            <label for="sent">Відправлена</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" name="status" id="canceled">
-                                            <label for="canceled">Відмінена</label>
-                                        </div>
-                                    </div>
+
                                 </td>
                             </tr>
                         @endforeach

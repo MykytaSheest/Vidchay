@@ -17,7 +17,7 @@ class OrderController extends Controller
 
     public function setOrder(OrderRequest $request)
     {
-        $this->orderService->createOrder($request);
+        return $this->orderService->createOrder($request);
     }
 
 }
