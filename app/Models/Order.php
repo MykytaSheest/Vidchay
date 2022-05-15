@@ -10,11 +10,14 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'client_id',
         'merch_id',
         'count-item',
         'post-index',
         'address',
+        'status_id',
+        'order_id'
     ];
 
     public function merches()
@@ -29,7 +32,7 @@ class Order extends Model
 
     public function statuses()
     {
-        return $this->belongsToMany(Status::class, 'order_status', 'status_id', 'id');
+        return $this->belongsToMany(Status::class, 'order_status')->withPivot('status_id');
     }
 }
 

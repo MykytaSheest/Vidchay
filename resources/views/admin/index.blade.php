@@ -151,7 +151,27 @@
                                 <td>{{$order->$postIndex}}</td>
                                 <td>{{$order->address}}</td>
                                 <td>
-
+                                    <form action="{{route('order.update.status')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="orderId" value="{{$order->id}}">
+                                        <select name="status" id="status">
+                                            @if($order->statuses()->first()->status_value == "accept")
+                                                <option value="accept" selected>Прийнято</option>
+                                                <option value="sent">Відправлено</option>
+                                                <option value="cancel">Відмінено</option>
+                                            @elseif($order->statuses()->first()->status_value == "sent")
+                                                <option value="accept">Прийнято</option>
+                                                <option value="sent" selected>Відправлено</option>
+                                                <option value="cancel">Відмінено</option>
+                                            @elseif($order->statuses()->first()->status_value == "cancel")
+                                                <option value="accept" >Прийнято</option>
+                                                <option value="sent" >Відправлено</option>
+                                                <option value="cancel" selected>Відмінено</option>
+                                            @endif
+                                        </select>
+                                        <button class="btn btn-success btn-sm m-3">Зберегти</button>
+                                        <a href="{{route('order.delete', $order->id)}}" class="btn btn-danger btn-sm m-3">Видалити</a>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

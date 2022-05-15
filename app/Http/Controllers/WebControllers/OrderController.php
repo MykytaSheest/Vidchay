@@ -3,10 +3,20 @@
 namespace App\Http\Controllers\WebControllers;
 
 use App\Models\Order;
+use App\Models\Status;
+use App\Service\OrderService;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+
+    protected $orderService;
+
+    public function __construct()
+    {
+        $this->orderService = new OrderService();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -72,14 +82,20 @@ class OrderController extends Controller
         //
     }
 
+    public function updateStatus(Request $request)
+    {
+        return $this->orderService->updateStatus($request);
+    }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        Order::destroy($id);
+        return redirect()->route('admin');
     }
 }
