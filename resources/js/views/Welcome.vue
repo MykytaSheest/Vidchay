@@ -15,14 +15,14 @@
                         <img src="../../../public/images/1.png" width="200px" alt="img">
                         <pre class="text-center mt-2">
 Олександр Строй
-(басист)
+(вокалист, ритм гітарист)
                         </pre>
                     </div>
                     <div>
                         <img src="../../../public/images/2.png" width="200px" alt="img">
                         <pre class="text-center mt-2">
 Ксенія Музика
-(вокалист, ритм гітарист)
+(басист)
                         </pre>
                     </div>
                     <div>
@@ -35,8 +35,9 @@
 
             </div>
             <div class="d-flex justify-content-center">
-                <iframe width="420" height="315"
-                        src="https://www.youtube.com/watch?v=N7UzbxqlArc">
+                <iframe width="600px"
+                        height="400px"
+                        src="https://www.youtube.com/embed/N7UzbxqlArc">
                 </iframe>
             </div>
         </div>
