@@ -4,23 +4,40 @@
         <div class="void"></div>
         <div class="description-container">
             <div class="row">
-                <div class="item"></div>
                 <div class="item">
-                    <p>
+                    <p class="text-center">
                         Vidchay - музичний гурт який утворився в 2021 році в маленькому містечку Ромни що на Сумщині. Гурт грає в жанрі гранж-інді рок. Цей колектив має вже багато прихильників в своєму місті й вони готові цьому не зупинітися. Продовжують писати пісні та давати концерти в різних містах України.
                     </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="item">
-                    <p>
-                        Склад: <br>
-                        Строй Олександр (вокал і гітара) <br>
-                        Ксенія Музика (барабани) <br>
-                        Дмитро Півторак (бас-гітара) <br>
-                    </p>
-                </div>
-                <div class="item"></div>
+            <div class="d-flex justify-content-around mt-5 mb-5">
+                    <div>
+                        <img src="../../../public/images/1.png" width="200px" alt="img">
+                        <pre class="text-center mt-2">
+Олександр Строй
+(басист)
+                        </pre>
+                    </div>
+                    <div>
+                        <img src="../../../public/images/2.png" width="200px" alt="img">
+                        <pre class="text-center mt-2">
+Ксенія Музика
+(вокалист, ритм гітарист)
+                        </pre>
+                    </div>
+                    <div>
+                        <img src="../../../public/images/3.png" width="200px" alt="img">
+                        <pre class="text-center mt-2">
+Дмитро Півторак
+(ударник)
+                        </pre>
+                    </div>
+
+            </div>
+            <div class="d-flex justify-content-center">
+                <iframe width="420" height="315"
+                        src="https://www.youtube.com/watch?v=N7UzbxqlArc">
+                </iframe>
             </div>
         </div>
         <div class="void"></div>

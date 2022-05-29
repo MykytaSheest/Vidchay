@@ -18,7 +18,6 @@ class OrderService
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname']
         ]);
-
         $order = Order::create([
             'client_id' => $client->id,
             'merch_id' => $data['merch_id'],

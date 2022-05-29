@@ -34,7 +34,6 @@ export default {
     methods: {
         sendForm() {
             axios.post('/api/order/set', this.order).then((response) => {
-                console.log(response.data)
                 if (response.status === 201) {
                     this.$router.push({name: 'merch', query: { success: 'yes' }})
                 }

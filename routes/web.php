@@ -35,6 +35,9 @@ Route::middleware('auth')->group(function() {
 
 });
 
+Route::get('payment', function () {
+   return view('payment.index');
+});
 
 Auth::routes(['register' => true]);
 
