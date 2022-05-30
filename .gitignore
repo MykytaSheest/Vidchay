@@ -15,8 +15,6 @@ yarn-error.log
 node_modules
 public/js
 public/css
-docker
-docker-compose.yml
 ssh
 ssh.pub
 .DS_Store
