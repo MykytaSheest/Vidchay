@@ -114,6 +114,76 @@
                         </form>
                     </div>
                 </div>
+        <div class="card text-center" style="margin-bottom: 15px">
+            <div class="card-header">
+                Замовлення
             </div>
+            <div class="card-body">
+                @if(!empty($orders[0]))
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID товару</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Імʼя</th>
+                        <th scope="col">Прізвище</th>
+                        <th scope="col">Одиниць товару</th>
+                        <th scope="col">Індекс</th>
+                        <th scope="col">Адреса</th>
+                        <th scope="col">Статус</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    @yield($countItem = 'count-item')
+                    @yield( $postIndex = 'post-index')
+
+                        @foreach($orders as $order)
+                            <tr>
+                                <td></td>
+                                <td>{{$order->merches->first()->id}}</td>
+                                <td>{{$order->clients->first()->email}}</td>
+                                <td>{{$order->clients->first()->firstname}}</td>
+                                <td>{{$order->clients->first()->lastname}}</td>
+
+                                <td>{{$order->$countItem}}
+                                <td>{{$order->$postIndex}}</td>
+                                <td>{{$order->address}}</td>
+                                <td>
+                                    <form action="{{route('order.update.status')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="orderId" value="{{$order->id}}">
+                                        <select name="status" id="status">
+                                            @if($order->statuses()->first()->status_value == "accept")
+                                                <option value="accept" selected>Прийнято</option>
+                                                <option value="sent">Відправлено</option>
+                                                <option value="cancel">Відмінено</option>
+                                            @elseif($order->statuses()->first()->status_value == "sent")
+                                                <option value="accept">Прийнято</option>
+                                                <option value="sent" selected>Відправлено</option>
+                                                <option value="cancel">Відмінено</option>
+                                            @elseif($order->statuses()->first()->status_value == "cancel")
+                                                <option value="accept" >Прийнято</option>
+                                                <option value="sent" >Відправлено</option>
+                                                <option value="cancel" selected>Відмінено</option>
+                                            @endif
+                                        </select>
+                                        <button class="btn btn-success btn-sm m-3">Зберегти</button>
+                                        <a href="{{route('order.delete', $order->id)}}" class="btn btn-danger btn-sm m-3">Видалити</a>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <div>
+                            <p>Замовлень немає</p>
+                        </div>
+                    @endif
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     </div>
 @endsection

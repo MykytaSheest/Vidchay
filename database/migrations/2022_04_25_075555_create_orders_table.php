@@ -20,8 +20,8 @@ return new class extends Migration
             $table->integer('count-item');
             $table->integer('post-index');
             $table->string('address');
-            $table->foreign('client_id')->references('id')->on('clients');
-            $table->foreign('merch_id')->references('id')->on('merches');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->foreign('merch_id')->references('id')->on('merches')->onDelete('cascade');
             $table->timestamps();
         });
     }

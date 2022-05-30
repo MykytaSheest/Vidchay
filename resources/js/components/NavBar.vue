@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse " id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-menu">
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{name: 'welcome'}">Главная</router-link>
+                        <router-link class="nav-link" :to="{name: 'welcome'}">Головна</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{name: 'concert'}">Концерт</router-link>

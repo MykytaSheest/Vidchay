@@ -1,23 +1,32 @@
 <template>
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../static/test.png" alt="Card image cap">
+        <img class="card-img-top" :src=" APP_URL + IMAGE_DIRECTORY + merchItem.image_url" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">Merch item</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title">{{merchItem.name}}</h5>
+            <p class="card-text">{{merchItem.description}}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Ціна: 500 грн</li>
-            <li class="list-group-item">Розміри: S M L XL XXL</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Ціна: {{merchItem.price}}</li>
+            <li class="list-group-item">Розміри: <span v-for="size in JSON.parse(merchItem.sizes)">{{size + ' '}}</span></li>
+            <li class="list-group-item">У наявності {{merchItem.amount}}</li>
         </ul>
-        <div class="card-body">
-            <button class="btn btn-secondary">КУПИТИ</button>
+        <div class="card-body" v-if="!this.$route.params.id">
+            <router-link class="btn btn-secondary" :to="{name: 'merchItem', params: {'id': merchItem.id}}">КУПИТИ</router-link>
         </div>
     </div>
 </template>
 
 <script>
+import {APP_URL, IMAGE_DIRECTORY} from "../helper"
+
 export default {
+    props: ['merchItem'],
+    data() {
+      return {
+          APP_URL,
+          IMAGE_DIRECTORY
+      }
+    },
     name: "Card"
 }
 </script>

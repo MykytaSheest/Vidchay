@@ -23,3 +23,7 @@ Route::prefix('merch')->group(function () {
     Route::get('get/{id}', [App\Http\Controllers\ApiControllers\MerchController::class, 'getItem'])->name('api:merch:item');
 });
 
+Route::prefix('order')->group(function () {
+    Route::post('set', [App\Http\Controllers\ApiControllers\OrderController::class, 'setOrder'])->name('api:order:create');
+});
+

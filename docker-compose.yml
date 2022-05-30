@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+    # nginx
+    nginx:
+        image: nginx:latest
+        ports:
+            - "80:80"
+            - "443:443"
+        environment:
+            SSL: "on"
+        volumes:
+            - ./:/var/www/project
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        restart: unless-stopped
+        depends_on:
+            - php
+
+    # php
+    php:
+        build:
+            context: ../Vidchay
+            dockerfile: ../Vidchay/docker/php/Dockerfile
+        container_name: vidchay-php
+        platform: linux/amd64
+        environment:
+            XDEBUG_SESSION: docker-server
+            XDEBUG_MODE: debug
+            XDEBUG_CONFIG: "
+                client_host=host.docker.internal
+                start_with_request=yes
+              "
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./:/var/www/project
+            - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+            - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+        links:
+            - db
+
+    # mysql
+    mysql:
+        image: mysql:8
+        platform: linux/amd64
+        container_name: vidchay-mysql
+        ports:
+            - "3306:3306"
+        restart: always # always restart unless stopped manually
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+            MYSQL_DATABASE: vidchay
+
+volumes:
+    db_data:
