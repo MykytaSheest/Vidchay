@@ -38,7 +38,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => '/var/www/vidchay' . '/storage',
+            'root' => public_path() . '/storage',
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
             'throw' => true,
