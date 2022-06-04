@@ -10,6 +10,7 @@
             <li class="list-group-item">Розміри: <span v-for="size in JSON.parse(merchItem.sizes)">{{size + ' '}}</span></li>
             <li class="list-group-item">У наявності {{merchItem.amount}}</li>
         </ul>
+
         <div class="card-body" v-if="!this.$route.params.id">
             <router-link class="btn btn-secondary" :to="{name: 'merchItem', params: {'id': merchItem.id}}">КУПИТИ</router-link>
         </div>
