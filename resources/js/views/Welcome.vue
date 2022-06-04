@@ -5,31 +5,47 @@
         <div class="description-container">
             <div class="row">
                 <div class="item">
-                    <p class="text-center">
-                        Vidchay - музичний гурт який утворився в 2021 році в маленькому містечку Ромни що на Сумщині. Гурт грає в жанрі гранж-інді рок. Цей колектив має вже багато прихильників в своєму місті й вони готові цьому не зупинітися. Продовжують писати пісні та давати концерти в різних містах України.
+                    <p class="text-center" v-if="lang == 0">
+                        {{LIST_UA.welcome.description}}
                     </p>
+                    <p class="text-center" v-if="lang == 1">
+                        {{LIST_EN.welcome.description}}
+                    </p>
+
                 </div>
             </div>
             <div class="d-flex justify-content-around mt-5 mb-5">
                     <div>
-                        <img src="../../../public/images/1.png" width="200px" alt="img">
-                        <pre class="text-center mt-2">
+                        <img src="../../../public/images/1.png" width="200" alt="img">
+                        <pre class="text-center mt-2" v-if="lang == 0">
 Олександр Строй
 (вокалист, ритм гітарист)
                         </pre>
-                    </div>
-                    <div>
-                        <img src="../../../public/images/2.png" width="200px" alt="img">
-                        <pre class="text-center mt-2">
-Ксенія Музика
-(басист)
+                        <pre class="text-center mt-2" v-if="lang == 1">
+Alexander Stroy
+(vocalist, rhythm guitarist)
                         </pre>
                     </div>
                     <div>
-                        <img src="../../../public/images/3.png" width="200px" alt="img">
-                        <pre class="text-center mt-2">
+                        <img src="../../../public/images/2.png" width="200" alt="img">
+                        <pre class="text-center mt-2" v-if="lang == 0">
+Ксенія Музика
+(басист)
+                        </pre>
+                        <pre class="text-center mt-2" v-if="lang == 1">
+Ksenia Music
+(bassist)
+                        </pre>
+                    </div>
+                    <div>
+                        <img src="../../../public/images/3.png" width="200" alt="img">
+                        <pre class="text-center mt-2" v-if="lang == 0">
 Дмитро Півторак
 (ударник)
+                        </pre>
+                        <pre class="text-center mt-2" v-if="lang == 1">
+Dmytro Pivtorak
+(percussionist)
                         </pre>
                     </div>
 
@@ -42,7 +58,8 @@
             </div>
         </div>
         <div class="void"></div>
-        <h2 class="text-center">Г а л е р е я</h2>
+        <h2 class="text-center" v-if="lang == 0">Г а л е р е я</h2>
+        <h2 class="text-center" v-if="lang == 1">G a l l e r y</h2>
         <div class="gallery">
             <gallery-item  v-for="number in numbers" :id-image=number class="m-5 gallery-item"></gallery-item>
         </div>
@@ -51,10 +68,15 @@
 
 <script>
 import GalleryItem from "../components/GalleryItem";
+import {LIST_UA} from "../lang/ua/list";
+import {LIST_EN} from "../lang/en/list";
 export default {
     name: "Welcome",
     data() {
         return {
+            LIST_UA,
+            LIST_EN,
+            lang: localStorage.getItem('lang'),
             numbers: [1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10 ,11]
         }
     },

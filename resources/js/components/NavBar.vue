@@ -8,26 +8,61 @@
             <div class="collapse navbar-collapse " id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-menu">
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{name: 'welcome'}">Головна</router-link>
+                        <router-link class="nav-link" :to="{name: 'welcome'}" v-if="lang ==0">Головна</router-link>
+                        <router-link class="nav-link" :to="{name: 'welcome'}" v-if="lang ==1">Main Page</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{name: 'concert'}">Концерт</router-link>
+                        <router-link class="nav-link" :to="{name: 'concert'}" v-if="lang ==0">Концерти</router-link>
+                        <router-link class="nav-link" :to="{name: 'concert'}" v-if="lang ==1">Concerts</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{name: 'merch'}">Мерч</router-link>
+                        <router-link class="nav-link" :to="{name: 'merch'}" v-if="lang ==0">Мерч</router-link>
+                        <router-link class="nav-link" :to="{name: 'merch'}" v-if="lang ==1">Merch</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{name: 'about'}">Контакти</router-link>
+                        <router-link class="nav-link" :to="{name: 'about'}" v-if="lang ==0">Контакти</router-link>
+                        <router-link class="nav-link" :to="{name: 'about'}" v-if="lang ==1">Contacts</router-link>
                     </li>
                 </ul>
             </div>
+            <li class="d-flex justify-content-center" v-if="lang == 0">
+                <button class="btn-sm btn-secondary m-1" id="ua" @click="clickUA">UA</button>
+                <button class="btn-sm btn-outline-secondary m-1" id="en" @click="clickEN">EN</button>
+            </li>
+            <li class="d-flex justify-content-center" v-if="lang == 1">
+                <button class="btn-sm btn-outline-secondary m-1" id="ua" @click="clickUA">UA</button>
+                <button class="btn-sm btn-secondary m-1" id="en" @click="clickEN">EN</button>
+            </li>
         </div>
     </nav>
 </template>
 
 <script>
 export default {
-    name: "NavBar"
+    data() {
+      return {
+          lang: !localStorage.getItem('lang') ? 0 : localStorage.getItem('lang')
+      }
+    },
+    name: "NavBar",
+    methods: {
+        clickUA() {
+            let ua = document.getElementById('ua')
+            let en = document.getElementById('en')
+            ua.classList.replace('btn-outline-secondary', 'btn-secondary')
+            en.classList.replace('btn-secondary', 'btn-outline-secondary')
+            localStorage.setItem('lang', 0)
+            location.reload();
+        },
+        clickEN() {
+            let ua = document.getElementById('ua')
+            let en = document.getElementById('en')
+            en.classList.replace('btn-outline-secondary', 'btn-secondary')
+            ua.classList.replace('btn-secondary', 'btn-outline-secondary')
+            localStorage.setItem('lang', 1)
+            location.reload();
+        }
+    }
 }
 </script>
 

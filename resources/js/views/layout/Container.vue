@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 import NavBar from "../../components/NavBar";
 import FooterBar from "../../components/FooterBar";
 export default {
@@ -14,6 +15,9 @@ export default {
     components: {
         NavBar,
         FooterBar
+    },
+    mounted() {
+        !localStorage.getItem('lang') ? localStorage.setItem('lang', 0) : localStorage.getItem('lang')
     }
 
 }

@@ -7,8 +7,10 @@
         </div>
         <div class="void"></div>
         <div>
-            <h5 class="counter">Концерт у Тернополі що відбутиться в Палаці культури «Березіль» по вулиці вул. Шевченка, 27
+            <h5 class="counter" v-if="lang == 0">Концерт у Тернополі що відбутиться в Палаці культури «Березіль» по вулиці вул. Шевченка, 27
                 квиток коштує 150 грн</h5>
+            <h5 class="counter" v-if="lang == 1">Concert in Ternopil to be held at the Palace of Culture "Berezil" on the street. Shevchenko, 27
+                the ticket costs UAH 150</h5>
         </div>
         <div class="void"></div>
         <FormForConcert></FormForConcert>
@@ -20,6 +22,11 @@
 import FormForConcert from "../components/FormForConcert";
 export default {
     name: "Concert",
+    data() {
+      return {
+        lang: localStorage.getItem('lang')
+      }
+    },
     components: {
         FormForConcert
     }
