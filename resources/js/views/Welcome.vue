@@ -42,12 +42,25 @@
             </div>
         </div>
         <div class="void"></div>
+        <h2 class="text-center">Г а л е р е я</h2>
+        <div class="gallery">
+            <gallery-item  v-for="number in numbers" :id-image=number class="m-5 gallery-item"></gallery-item>
+        </div>
     </div>
 </template>
 
 <script>
+import GalleryItem from "../components/GalleryItem";
 export default {
     name: "Welcome",
+    data() {
+        return {
+            numbers: [1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10 ,11]
+        }
+    },
+    components: {
+        GalleryItem,
+    }
 
 }
 </script>
@@ -90,4 +103,13 @@ export default {
         color: white;
         background-color: rgba(33,37,41, 1);
     }
+
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+
 </style>
