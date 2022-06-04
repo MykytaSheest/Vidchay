@@ -3,24 +3,35 @@
       <form>
           <div class="form-group">
               <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введіть ваш email">
+              <input v-if="lang == 0" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введіть ваш email">
+              <input v-if="lang == 1" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
           </div>
           <div class="form-group">
-              <label for="exampleInputFirstName">Імʼя</label>
-              <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Введіть ваше імʼя">
+              <label v-if="lang == 0" for="exampleInputFirstName">Імʼя</label>
+              <label v-if="lang == 1" for="exampleInputFirstName">Firstname</label>
+              <input v-if="lang == 0" type="text" class="form-control" id="exampleInputFirstName" placeholder="Введіть ваше імʼя">
+              <input v-if="lang == 1" type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter firstname">
           </div>
           <div class="form-group">
-              <label for="exampleInputLastName">Прізвище</label>
-              <input type="text" class="form-control" id="exampleInputLastName" placeholder="Введіть ваше прізвище">
+              <label v-if="lang == 0" for="exampleInputLastName">Прізвище</label>
+              <label v-if="lang == 1" for="exampleInputLastName">Lastname</label>
+              <input v-if="lang == 0" type="text" class="form-control" id="exampleInputLastName" placeholder="Введіть ваше прізвище">
+              <input v-if="lang == 1" type="text" class="form-control" id="exampleInputLastName" placeholder="Enter lastname">
           </div>
-          <button type="submit" class="btn btn-secondary">Замовити</button>
+          <button v-if="lang == 0" type="submit" class="btn btn-secondary">Замовити</button>
+          <button v-if="lang == 1" type="submit" class="btn btn-secondary">Make an order</button>
       </form>
   </div>
 </template>
 
 <script>
 export default {
-    name: "FormForConcert"
+    name: "FormForConcert",
+    data() {
+        return {
+            lang: localStorage.getItem('lang')
+        }
+    }
 }
 </script>
 

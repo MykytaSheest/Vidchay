@@ -1,9 +1,11 @@
 <template>
     <div>
         <div class="void"></div>
-        <div class="contact"><h4>Директор гурту - Євген Гречка</h4></div>
+        <div class="contact" v-if="lang ==0"><h4>Директор гурту - Євген Гречка</h4></div>
+        <div class="contact" v-if="lang ==1"><h4>The band's director - Yevhen Hrechka</h4></div>
         <div class="void"></div>
-        <div class="contact"><h4>Тел: +380980988730</h4></div>
+        <div class="contact" v-if="lang ==0"><h4>Тел: +380980988730</h4></div>
+        <div class="contact" v-if="lang ==1"><h4>Phone: +380980988730</h4></div>
         <div class="void"></div>
         <div class="contact"><h4>Е-mail: vidchayevgen@gmail.com</h4></div>
     </div>
@@ -11,7 +13,12 @@
 
 <script>
 export default {
-    name: "About"
+    name: "About",
+    data() {
+        return {
+            lang: localStorage.getItem('lang')
+        }
+    }
 }
 </script>
 

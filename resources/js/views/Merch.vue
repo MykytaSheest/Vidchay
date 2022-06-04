@@ -12,8 +12,11 @@
                 <Card :merchItem="merchItem"></Card>
             </div>
             <div v-if="merchItems <= 0">
-                <div class="alert alert-secondary" role="alert">
+                <div class="alert alert-secondary" role="alert" v-if="lang == 0">
                     Нажаль товару немає :c
+                </div>
+                <div class="alert alert-secondary" role="alert" v-if="lang == 1">
+                    Unfortunately there is no product :c
                 </div>
             </div>
         </div>
@@ -28,7 +31,8 @@ export default {
     name: "Merch",
     data() {
         return {
-            merchItems: null
+            merchItems: null,
+            lang: localStorage.getItem('lang')
         }
     },
     components: {
