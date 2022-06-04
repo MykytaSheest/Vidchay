@@ -16,8 +16,8 @@ services:
     # php
     php:
         build:
-            context: ../vidchay
-            dockerfile: ../vidchay/docker/php/Dockerfile
+            context: ../Vidchay
+            dockerfile: ../Vidchay/docker/php/Dockerfile
         container_name: vidchay-php
         environment:
             XDEBUG_SESSION: docker-server
