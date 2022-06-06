@@ -58,6 +58,66 @@ Dmytro Pivtorak
             </div>
         </div>
         <div class="void"></div>
+        <h2 class="text-center" v-if="lang == 0">Новини</h2>
+        <h2 class="text-center" v-if="lang == 1">News</h2>
+        <div class="news">
+            <div class="new-item">
+                <hr>
+                <h4 class="text-center" v-if="lang == 0">4 ЧЕРВНЯ Гурт опублікував свій перший відео кліп в якому підтримав українців.</h4>
+                <h4 class="text-center" v-if="lang == 1">JUNE 4 The band released their first video on behalf of Ukrainians.</h4>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <iframe width="600px"
+                            height="400px"
+                            src="https://www.youtube.com/embed/i358sOijfMo">
+                    </iframe>
+                </div>
+                <br>
+                <p v-if="lang == 0">
+                    Пісня "Закрий очі мені" є найпершою піснею, що була написана мною під час війни. В ній
+                    я висловив всі свої занепокоєння щодо людей: про їхнє терпіння та силу волі, про психічну
+                    та фізичну витримку під час війни з росією. "Не чути зброю цих клятих окупантів. Тому я тебе
+                    благаю: закрий очі мені" – прохання, щоб це все скоріш закінчилося та щоб ніколи не чути ці
+                    постріли, крики, руйнування та смерть. Тому я благаю, щоб війна завершилася якнайшвидше та
+                    вільна Україна перемогла.
+                </p>
+                <p v-if="lang == 1">
+                    The song "Close My Eyes" is the first song I wrote during the war. In her
+                    I expressed all my concerns about people: about their patience and willpower, about mental
+                    and physical endurance during the war with Russia. "Don't hear the weapons of these damned occupiers. That's why I'm you
+                    I beg you to close your eyes to me "- a request that this all end soon and that I never hear these
+                    shots, screams, destruction and death. Therefore, I beg that the war be over as soon as possible
+                    free Ukraine won.
+                </p>
+            </div>
+            <div class="new-item">
+                <hr>
+                <h4 class="text-center" v-if="lang == 0">24 ЛИПНЯ Гурт «Vidchay» до ювілею свого існування, дарує великий концерт в Харкові, на стадіоні «Металіст».</h4>
+                <h4 class="text-center" v-if="lang == 1">JULY 24 To mark the anniversary of its existence, Vidchay presents a big concert in Kharkiv, at the Metalist Stadium.</h4>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <img  src="../../../public/images/new_1.jpg" alt="img" width="400">
+                </div>
+                <br>
+            </div>
+            <div class="new-item">
+                <hr>
+                <h4 class="text-center" v-if="lang == 0">26 ЧЕРВНЯ Прем’єра нової пісня «Зорепад»</h4>
+                <h4 class="text-center" v-if="lang == 1">JUNE 26 Premiere of the new song "Zorepad"</h4>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <img  src="../../../public/images/new_2.jpg" alt="img" width="400">
+                </div>
+                <br>
+                <p v-if="lang == 0" class="text-center">
+                    26 червня 2022 року відбудеться прем’єра авторської музичної пісні Строя Олександра під назвою «Зорепад».
+                </p>
+                <p v-if="lang == 1" class="text-center">
+                    On June 26, 2022, the premiere of the author's musical song by Alexander Story entitled "Starfall" will take place.
+                </p>
+            </div>
+
+        </div>
         <h2 class="text-center" v-if="lang == 0">Г а л е р е я</h2>
         <h2 class="text-center" v-if="lang == 1">G a l l e r y</h2>
         <div class="gallery">
@@ -131,6 +191,18 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+
+    .news {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .new-item {
+        width: 70%;
+        margin: 5px;
     }
 
 
