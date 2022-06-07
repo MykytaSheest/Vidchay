@@ -7,7 +7,11 @@
         <div class="contact" v-if="lang ==0"><h4>Тел: +380980988730</h4></div>
         <div class="contact" v-if="lang ==1"><h4>Phone: +380980988730</h4></div>
         <div class="void"></div>
-        <div class="contact"><h4>Е-mail: <a class="link-secondary" target="_blank" href="mailto: vidchayevgen@gmail.com">vidchayevgen@gmail.com</a></h4></div>
+        <div class="contact" v-if="lang ==0"><h4>Замовлення концертів</h4></div>
+        <div class="contact" v-if="lang ==1"><h4>Ordering concerts</h4></div>
+        <div class="contact"><h4><a class="link-secondary" target="_blank" href="mailto: vidchayevgen@gmail.com">vidchayevgen@gmail.com</a></h4></div>
+        <div class="void"></div>
+
     </div>
 </template>
 
