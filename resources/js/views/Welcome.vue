@@ -2,62 +2,6 @@
     <div>
         <div class="main-image"></div>
         <div class="void"></div>
-        <div class="description-container">
-            <div class="row">
-                <div class="item">
-                    <p class="text-center" v-if="lang == 0">
-                        {{LIST_UA.welcome.description}}
-                    </p>
-                    <p class="text-center" v-if="lang == 1">
-                        {{LIST_EN.welcome.description}}
-                    </p>
-
-                </div>
-            </div>
-            <div class="d-flex justify-content-around mt-5 mb-5">
-                    <div>
-                        <img src="../../../public/images/1.png" width="200" alt="img">
-                        <pre class="text-center mt-2" v-if="lang == 0">
-Олександр Строй
-(вокалист, ритм гітарист)
-                        </pre>
-                        <pre class="text-center mt-2" v-if="lang == 1">
-Alexander Stroy
-(vocalist, rhythm guitarist)
-                        </pre>
-                    </div>
-                    <div>
-                        <img src="../../../public/images/2.png" width="200" alt="img">
-                        <pre class="text-center mt-2" v-if="lang == 0">
-Ксенія Музика
-(басист)
-                        </pre>
-                        <pre class="text-center mt-2" v-if="lang == 1">
-Ksenia Music
-(bassist)
-                        </pre>
-                    </div>
-                    <div>
-                        <img src="../../../public/images/3.png" width="200" alt="img">
-                        <pre class="text-center mt-2" v-if="lang == 0">
-Дмитро Півторак
-(ударник)
-                        </pre>
-                        <pre class="text-center mt-2" v-if="lang == 1">
-Dmytro Pivtorak
-(percussionist)
-                        </pre>
-                    </div>
-
-            </div>
-            <div class="d-flex justify-content-center">
-                <iframe width="600px"
-                        height="400px"
-                        src="https://www.youtube.com/embed/N7UzbxqlArc">
-                </iframe>
-            </div>
-        </div>
-        <div class="void"></div>
         <h2 class="text-center" v-if="lang == 0">Новини</h2>
         <h2 class="text-center" v-if="lang == 1">News</h2>
         <div class="news">
@@ -118,6 +62,64 @@ Dmytro Pivtorak
             </div>
 
         </div>
+        <div class="void"></div>
+        <div class="description-container">
+            <div class="row">
+                <div class="item">
+                    <p class="text-center" v-if="lang == 0">
+                        {{LIST_UA.welcome.description}}
+                    </p>
+                    <p class="text-center" v-if="lang == 1">
+                        {{LIST_EN.welcome.description}}
+                    </p>
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-around mt-5 mb-5">
+                    <div>
+                        <img src="../../../public/images/1.png" width="200" alt="img">
+                        <pre class="text-center mt-2" v-if="lang == 0">
+Олександр Строй
+(вокалист, ритм гітарист)
+                        </pre>
+                        <pre class="text-center mt-2" v-if="lang == 1">
+Alexander Stroy
+(vocalist, rhythm guitarist)
+                        </pre>
+                    </div>
+                    <div>
+                        <img src="../../../public/images/2.png" width="200" alt="img">
+                        <pre class="text-center mt-2" v-if="lang == 0">
+Ксенія Музика
+(басист)
+                        </pre>
+                        <pre class="text-center mt-2" v-if="lang == 1">
+Ksenia Music
+(bassist)
+                        </pre>
+                    </div>
+                    <div>
+                        <img src="../../../public/images/3.png" width="200" alt="img">
+                        <pre class="text-center mt-2" v-if="lang == 0">
+Дмитро Півторак
+(ударник)
+                        </pre>
+                        <pre class="text-center mt-2" v-if="lang == 1">
+Dmytro Pivtorak
+(percussionist)
+                        </pre>
+                    </div>
+
+            </div>
+            <div class="d-flex justify-content-center">
+                <iframe width="600px"
+                        height="400px"
+                        src="https://www.youtube.com/embed/N7UzbxqlArc">
+                </iframe>
+            </div>
+        </div>
+        <div class="void"></div>
+
         <h2 class="text-center" v-if="lang == 0">Г а л е р е я</h2>
         <h2 class="text-center" v-if="lang == 1">G a l l e r y</h2>
         <div class="gallery">
